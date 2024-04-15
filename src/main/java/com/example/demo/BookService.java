@@ -29,6 +29,7 @@ public class BookService {
     @PostConstruct
     public void logWithExceptionTrace() {
         Exception e = new NullPointerException("This is an NullPointerException");
-        log.warn("This is a warning message {}", 1, 2, 3, 4, e);
+        log.warn("This is a warning message {} {}", 1, 2, 3, 4, e); // it prints the exception trace
+        log.warn("This is a warning message2 {} {}", 1, 2, 3, 4, e.getMessage()); // it doesnt print getMessage because it is not a placeholder
     }
 }
